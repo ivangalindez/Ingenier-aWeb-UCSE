@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+<head>
+	<link rel="stylesheet" href="css/detail.css">
+</head>
+
+<body>
+	{% block content %}
+	    <h1 style="margin-top: 100px;">Publicación</h1>
+	    <form method="POST" class="post-form">
+	    	{% csrf_token %}
+	        {{ form.as_p }}
+	        <button class="btn btn-primary btn-primary" type="submit" name="guardar"/>Guardar</button> 
+	    </form>
+	{% endblock %}
+</body>

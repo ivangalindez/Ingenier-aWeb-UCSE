@@ -1,0 +1,95 @@
+html{
+	font-size: 20px;
+}
+
+.social-bar{
+	position: fixed;
+	right: 0;
+	top: 35%;
+	font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.icon{
+	color: white;
+	text-decoration: none;
+	padding: .7rem;
+	display: flex;
+	transition: all .5s;
+}
+
+.icon-twitter{
+	background: #339DC5;
+}
+
+.icon-youtube{
+	background: #E83028;
+}
+
+
+.icon-instagram{
+	background: #3F60A5;
+}
+
+.icon:first-child{
+	border-radius: 1rem 0 0 0;
+}
+
+.icon:last-child{
+	border-radius: 0 0 0 1rem;
+}
+
+
+.icon:hover{
+	padding-right: 3rem;
+	border-radius: 1rem 0 0 1rem;
+	box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+}
+
+
+#submit {
+	display: none;	
+}
+
+form .icon, form .submit {
+	width: 35px;
+	height: 35px;
+	background: #000000;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+form .submit {
+	background: #000000;
+	cursor: pointer;
+}
+
+/* Now, we'll create a search (magnifying glass) icon using pseudo elements */
+form .icon:after, form .submit:after  {
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border: 2px solid white;
+	border-radius: 50%;
+	left: 10px;
+	top: 9px;
+}
+
+form .icon:before, form .submit:before {
+	content: '';
+	position: absolute;
+	height: 8px;
+	width: 2px;
+	background: white;
+	transform: rotate(-35deg);
+	top: 19px;
+	left: 21px;
+}
+
+form .search {
+	margin-top: 5px;
+}

@@ -1,0 +1,4 @@
+pip
+Django==1.8
+django-heroku
+gunicorn

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div  class="post">
+        {% if post.published_date %}
+            <div style="margin-left: 870px" class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <ul>
+            <div style="margin-left: 940px" class="form-group">
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
+        </ul>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

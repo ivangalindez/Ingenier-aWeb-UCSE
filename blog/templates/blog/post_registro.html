@@ -1,0 +1,90 @@
+{% extends 'blog/base.html'%}
+
+{% block title %}
+Login 
+{% endblock %}
+{% block navbar%} 
+{% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<head>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+	<form method="post"> 
+		{% csrf_token %} 
+		<div class="row"> 
+			<div style="text-align: center" class="col-md-6 col-md-offset-3"> 
+				<div style="margin-bottom: -75px ; font-size: 20px"  class="form-group">
+					 <label >Registro</label>
+				</div> 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-md-6 col-md-offset-3"> 
+				<div class="form-post" align="center" style="color: #eb360f;font-size: 15px;margin-bottom: -20px">
+					{% if messages %}
+					    <ul class="messages">
+					      {% for message in messages %}
+					        <li class="{{ message.tags }}">{{ message }}</li>
+					      {% endfor %}
+					    </ul>
+					{% endif %}
+				</div>
+				<div style="margin-bottom: -90px" class="form-group">
+					<label for="username">Nombre de usuario</label>
+					<input class="form-control" type="text" name="username" placeholder="Nombre de usuario">
+				</div> 
+				<div style="margin-bottom: -90px" class="form-group">
+					<label for="username">E-mail</label>
+					<input class="form-control" type="text" name="email" placeholder="ejemplo@gmail.com">
+				</div>
+				<div style="margin-bottom: -90px" class="form-group"> 
+					<label for="username">Contraseña:</label> 
+					<input class="form-control" type="password" name="password1" placeholder="Constraseña"> 
+				</div> 
+				<div style="margin-bottom: -90px" class="form-group"> 
+					<label for="username">Confirmar contraseña:</label> 
+					<input class="form-control" type="password" name="password2" placeholder="Confirmar contraseña"> 
+				</div>
+				<div style="margin-bottom: -90px"  class="form-group">
+					<label for="username">Nombre</label>
+					<input class="form-control" type="text" name="nombre" placeholder="Nombre">
+				</div> 
+				<div style="margin-bottom: -90px" class="form-group">
+					<label for="username">Apellido</label>
+					<input class="form-control" type="text" name="apellido"  placeholder="Apellido">
+				</div> 
+				<div style="margin-bottom: 10px" class="form-group">
+					<label for="username">Fecha de nacimiento</label>
+					<dl class="ctrlUnit OptOut">
+						<input class="textCtrl autoSize" type="text" name="dia" size="2" maxlength="2" placeholder="Día" value="">
+						<select class="textCtrl autoSize" name="meses">
+							<option value="0" selected="selected"></option>
+							<option value="1" selected="selected">Enero</option>
+							<option value="2" selected="selected">Febrero</option>
+							<option value="3" selected="selected">Marzo</option>
+							<option value="4" selected="selected">Abril</option>
+							<option value="5" selected="selected">Mayo</option>
+							<option value="6" selected="selected">Junio</option>
+							<option value="7" selected="selected">Julio</option>
+							<option value="8" selected="selected">Agosto</option>
+							<option value="9" selected="selected">Septiembre</option>
+							<option value="10" selected="selected">Octubre</option>
+							<option value="11" selected="selected">Noviembre</option>
+							<option value="12" selected="selected">Diciembre</option>
+							<option value="0" selected="selected"></option>
+							
+						</select>
+						<input class="textCtrl autoSize" type="text" name="año" size="4" maxlength="4" placeholder="Año" value="">
+					</dl>
+				</div> 
+				<div class="form-group"> 
+					<button class="btn btn-primary btn-block" type="submit" name="registrarse"/>Registrarse</button>  
+				</div> 
+			</div> 
+		</div>  
+	</form>
+</body>
+{% endblock %}﻿

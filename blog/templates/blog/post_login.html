@@ -1,0 +1,49 @@
+{% extends 'blog/base.html'%}
+
+{% block title %} Login {% endblock %}
+{% block login_active %}active{% endblock %}
+{% block navbar%} {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<head>
+    <title>Ingresar</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+	<form method="post" action=""> 
+		{% csrf_token %} 
+		<div class="row"> 
+			<div style="text-align: center" class="col-md-6 col-md-offset-3"> 
+				<div style="margin-bottom: -75px; font-size: 20px"  class="form-group">
+					 <label >Inicio de Sesión</label>
+				</div> 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-md-6 col-md-offset-3"> 
+				<div class="form-post" align="center" style="color: #eb360f;font-size: 15px;margin-bottom: -20px">
+					{% if messages %}
+					    <ul class="messages">
+					      {% for message in messages %}
+					        <li class="{{ message.tags }}">{{ message }}</li>
+					      {% endfor %}
+					    </ul>
+					{% endif %}
+				</div>
+				<div style="margin-bottom: -75px"  class="form-group">
+					<label for="username">Usuario</label>
+					<input class="form-control" type="text" name="username" placeholder="Usuario">
+				</div> 
+				<div  class="form-group"> 
+					<label for="username">Contraseña</label> 
+					<input class="form-control" type="password" name="password" placeholder="Contraseña" > 
+				</div> 
+				<div class="form-group"> 
+					<a href="#">¿Olvido su contraseña?</a>
+					<button class="btn btn-primary btn-block" type="submit" name="ingresar"/>Ingresar</button> 
+					<a href="/post/registro/">¿Desea Registrarse?</a>
+				</div>  
+		</div>  
+	</form>
+</body>
+{% endblock %}﻿
